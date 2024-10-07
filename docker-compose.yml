@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  php:
+    build: ./wordpress
+    image: php:8.0-apache
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ngocanh
+      WORDPRESS_DB_PASSWORD: 123456@a
+      WORDPRESS_DB_NAME: bosstek
+    volumes:
+      - ./wordpress:/var/www/html
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: bosstek
+      MYSQL_USER: ngocanh
+      MYSQL_PASSWORD: 123456@a
+      MYSQL_ROOT_PASSWORD: 123456@a
+    volumes:
+      - db_data:/var/lib/mysql
+  nextjs:
+    build: ./nextjs
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./nextjs:/app
+    working_dir: /app
+    command: npm run dev
+volumes:
+  wordpress:
+  db_data:
