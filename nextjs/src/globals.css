@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.top_menu {
+  color: #000;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.register-card {
+  display: flex;
+}
+
+.register-card .register-card__left {
+  flex: 1;
+  background-color: #556270;
+}
+
+.register-card .register-card__right {
+  flex: 1;
+  background-color: #333333;
+}
+
+.register-card_item {
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.register-card_item .register-card_title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.register-card_item .register-card_des {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 1.5rem;
+}
+
+.register-card_button {
+    border-radius: 0;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    line-height: 1.5;
+    background: #424E5C;
+}
+
+#content_top {
+  background-color: #0047bb;
+  padding: 2% 5%;
+  text-align: center;
+}
+
+#content_top h2 {
+  line-height: 1.2em;
+}
+
+#content_top p {
+  font-size: 1.3rem;
+  line-height: 1.5em;
+}
+
+.main {
+  padding: 90px 0 0;
+}
+
